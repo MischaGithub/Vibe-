@@ -5,8 +5,8 @@ import "./App.css";
 
 import Home from "./Components/pages/Home";
 import About from "./Components/pages/About";
-import Login from "./Components/pages/Login";
-import Register from "./Components/pages/Register";
+import Login from "./Components/auth/Login";
+import Register from "./Components/auth/Register";
 
 const App = () => {
   return (
