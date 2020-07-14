@@ -7,6 +7,9 @@ const app = express();
 // Connect Database
 connectDB();
 
+// Init Middleware
+app.use(express.json({ extended: false }));
+
 // Routes
 app.get("/", (req, res) =>
   res.json({ msg: "Welcome to Vibe a review site..." })
