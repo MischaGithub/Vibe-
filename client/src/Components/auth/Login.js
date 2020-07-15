@@ -1,9 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../../context/alerts/alertContext";
 import AuthContext from "../../context/auth/authContext";
-import PropTypes from "prop-types";
 
-const Login = (props, { title, icon }) => {
+const Login = (props) => {
   // Alert Context
   const alertContext = useContext(AlertContext);
 
@@ -57,9 +56,6 @@ const Login = (props, { title, icon }) => {
 
   return (
     <div className="form-container">
-      <h1 className="bg-dark">
-        <i className={icon} /> {title}
-      </h1>
       <h1>
         Account <span className="text-danger">Login</span>
       </h1>
@@ -83,16 +79,6 @@ const Login = (props, { title, icon }) => {
       </form>
     </div>
   );
-};
-
-Login.propTypes = {
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string,
-};
-
-Login.defaultProps = {
-  title: "Vibe",
-  icon: "fa fa-vimeo-square",
 };
 
 export default Login;
