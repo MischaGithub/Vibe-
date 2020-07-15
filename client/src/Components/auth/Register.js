@@ -3,7 +3,7 @@ import AlertContext from "../../context/alerts/alertContext";
 import AuthContext from "../../context/auth/authContext";
 import PropTypes from "prop-types";
 
-const Register = ({ title, icon }) => {
+const Register = (props, { title, icon }) => {
   // Alert Context
   const alertContext = useContext(AlertContext);
 
@@ -14,15 +14,20 @@ const Register = ({ title, icon }) => {
   const { setAlert } = alertContext;
 
   // Sign_up
-  const { sign_up, error, clear_errors } = authContext;
+  const { sign_up, error, clear_errors, isAuthenticated } = authContext;
 
   // UseEffect
   useEffect(() => {
+    // Checking if isAuthenticated and then redirect to the home page
+    if (isAuthenticated) {
+      props.history.push("/");
+    }
     if (error === "User already exists") {
       setAlert(error, "danger");
       clear_errors();
     }
-  }, [error]);
+    //eslint-disable-next-line
+  }, [error, isAuthenticated, props.history]);
 
   // State
   const [user, setUser] = useState({

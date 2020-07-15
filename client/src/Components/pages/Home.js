@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
-import Navbar from "../layout/TopNav";
+import AuthContext from "../../context/auth/authContext";
 
 const Home = ({ title, icon }) => {
+  // AuthContext
+  const authContext = useContext(AuthContext);
+
+  useEffect(() => {
+    authContext.load_user();
+    // eslint-disable-next-line
+  }, []);
   return (
     <div className="home-container">
       <h1 className="bg-dark">

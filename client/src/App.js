@@ -10,6 +10,12 @@ import Login from "./Components/auth/Login";
 import Register from "./Components/auth/Register";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alerts/AlertState";
+import setAuthToken from "./utils/setAuthToken";
+
+// Check localStorage
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 const App = () => {
   return (
@@ -18,14 +24,15 @@ const App = () => {
         <Router>
           <Fragment>
             <Navbar />
-
-            <Alerts />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/register" component={Register} />
-            </Switch>
+            <div className="container">
+              <Alerts />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
+              </Switch>
+            </div>
           </Fragment>
         </Router>
       </AlertState>
