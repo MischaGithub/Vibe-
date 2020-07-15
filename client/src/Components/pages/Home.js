@@ -4,8 +4,8 @@ import Navbar from "../layout/TopNav";
 
 const Home = ({ title, icon }) => {
   return (
-    <div>
-      <h1>
+    <div className="home-container">
+      <h1 className="bg-dark">
         <i className={icon} /> {title}
       </h1>
     </div>

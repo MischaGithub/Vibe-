@@ -22,7 +22,7 @@ const Login = ({ title, icon }) => {
   return (
     <div className="form-container">
       <h1>
-        <h1>
+        <h1 className="bg-dark">
           <i className={icon} /> {title}
         </h1>
         Account <span className="text-danger">Login</span>
@@ -43,11 +43,7 @@ const Login = ({ title, icon }) => {
           />
         </div>
 
-        <input
-          type="submit"
-          value="Login"
-          className="btn btn-danger btn-block"
-        />
+        <input type="submit" value="Login" className="btn btn-dark btn-block" />
       </form>
     </div>
   );

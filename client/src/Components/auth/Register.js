@@ -58,7 +58,7 @@ const Register = ({ title, icon }) => {
   return (
     <div className="form-container">
       <h1>
-        <h1>
+        <h1 className="bg-dark">
           <i className={icon} /> {title}
         </h1>
         Account <span className="text-danger">Sign-Up</span>
@@ -99,7 +99,7 @@ const Register = ({ title, icon }) => {
         <input
           type="submit"
           value="Sign-up"
-          className="btn btn-danger btn-block"
+          className="btn btn-dark btn-block"
         />
       </form>
     </div>
