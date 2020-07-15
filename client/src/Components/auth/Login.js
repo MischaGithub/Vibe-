@@ -1,7 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import AlertContext from "../../context/alerts/alertContext";
+import AuthContext from "../../context/auth/authContext";
 import PropTypes from "prop-types";
 
-const Login = ({ title, icon }) => {
+const Login = (props, { title, icon }) => {
+  // Alert Context
+  const alertContext = useContext(AlertContext);
+
+  // Auth Context
+  const authContext = useContext(AuthContext);
+
+  // Set Alert
+  const { setAlert } = alertContext;
+
+  // Sign_up
+  const { login_user, error, clear_errors, isAuthenticated } = authContext;
+
+  // UseEffect
+  useEffect(() => {
+    // Checking if isAuthenticated and then redirect to the home page
+    if (isAuthenticated) {
+      props.history.push("/");
+    }
+    if (error === "Invalid Credentials") {
+      setAlert(error, "danger");
+      clear_errors();
+    }
+    //eslint-disable-next-line
+  }, [error, isAuthenticated, props.history]);
+
   // State
   const [user, setUser] = useState({
     email: "",
@@ -14,17 +41,26 @@ const Login = ({ title, icon }) => {
   // onSubmit
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("Login submit");
+
+    // Check if fields are filled in
+    if (email === "" || password === "") {
+      setAlert("Please make sure all fields are filled in", "danger");
+    } else {
+      login_user({
+        email,
+        password,
+      });
+    }
   };
 
   const { email, password } = user;
 
   return (
     <div className="form-container">
+      <h1 className="bg-dark">
+        <i className={icon} /> {title}
+      </h1>
       <h1>
-        <h1 className="bg-dark">
-          <i className={icon} /> {title}
-        </h1>
         Account <span className="text-danger">Login</span>
       </h1>
       <form onSubmit={onSubmit}>

@@ -62,10 +62,10 @@ const Register = (props, { title, icon }) => {
 
   return (
     <div className="form-container">
+      <h1 className="bg-dark">
+        <i className={icon} /> {title}
+      </h1>
       <h1>
-        <h1 className="bg-dark">
-          <i className={icon} /> {title}
-        </h1>
         Account <span className="text-danger">Sign-Up</span>
       </h1>
       <form onSubmit={onSubmit}>
