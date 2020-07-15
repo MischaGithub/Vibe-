@@ -1,8 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../../context/alerts/alertContext";
 import AuthContext from "../../context/auth/authContext";
+import PropTypes from "prop-types";
 
-const Register = () => {
+const Register = ({ title, icon }) => {
   // Alert Context
   const alertContext = useContext(AlertContext);
 
@@ -57,7 +58,10 @@ const Register = () => {
   return (
     <div className="form-container">
       <h1>
-        Account <span className="text-danger">Sign Up</span>
+        <h1>
+          <i className={icon} /> {title}
+        </h1>
+        Account <span className="text-danger">Sign-Up</span>
       </h1>
       <form onSubmit={onSubmit}>
         <div className="form-group">
@@ -100,6 +104,16 @@ const Register = () => {
       </form>
     </div>
   );
+};
+
+Register.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+};
+
+Register.defaultProps = {
+  title: "Vibe",
+  icon: "fa fa-vimeo-square",
 };
 
 export default Register;

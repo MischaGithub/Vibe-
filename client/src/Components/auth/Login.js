@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-const Login = () => {
+const Login = ({ title, icon }) => {
   // State
   const [user, setUser] = useState({
     email: "",
@@ -21,6 +22,9 @@ const Login = () => {
   return (
     <div className="form-container">
       <h1>
+        <h1>
+          <i className={icon} /> {title}
+        </h1>
         Account <span className="text-danger">Login</span>
       </h1>
       <form onSubmit={onSubmit}>
@@ -47,6 +51,16 @@ const Login = () => {
       </form>
     </div>
   );
+};
+
+Login.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+};
+
+Login.defaultProps = {
+  title: "Vibe",
+  icon: "fa fa-vimeo-square",
 };
 
 export default Login;
