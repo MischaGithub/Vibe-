@@ -14,6 +14,7 @@ const About = ({ title, icon }) => {
       <h1 className="bg-dark">
         <i className={icon} /> {title}
       </h1>
+      {/* Just a small paragraph about the the website */}
       <h1>About this website</h1>
       <p className="my-1">
         Vibe was founded to help people find great local businesses like
@@ -25,7 +26,7 @@ const About = ({ title, icon }) => {
         the marketing of their business but also grow a substantial business
         growth and a continous growing client base.
       </p>
-      <div className="grid-3">
+      <div className="grid-2">
         <img src={Barber} alt="avatar" />
         <img src={Burgers} alt="avatar" />
         <img src={HairSalon} alt="avatar" />
