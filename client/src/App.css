@@ -7,6 +7,7 @@
   --white-color: #ffffff;
   --danger-color: #f30707;
   --green-color: #008000;
+  --grey-color: #696969;
 }
 
 * {
@@ -80,9 +81,10 @@ h3 {
 }
 
 .search-wrapper {
+  margin: 0;
   max-width: 350px;
   width: 100%;
-  padding: 5px;
+  padding: 0px;
   border-radius: 5px;
   display: flex;
 }
@@ -185,6 +187,14 @@ img {
 .badge-primary,
 .alert-primary {
   background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-grey,
+.bg-grey,
+.badge-grey,
+.alert-grey {
+  background: var(--grey-color);
   color: #fff;
 }
 
@@ -299,6 +309,45 @@ h3 {
   margin: 0.3rem;
 }
 
+/* Padding */
+.p {
+  padding: 0.5rem;
+}
+.p-1 {
+  padding: 1rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+.py {
+  padding: 0.5rem 0;
+}
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+
+/* Text Styles */
+.x-large {
+  font-size: 3rem;
+}
+
+.large {
+  font-size: 2rem;
+}
+
+.lead {
+  font-size: 1rem;
+}
+
 /* Navbar */
 .nav {
   display: flex;
@@ -340,45 +389,6 @@ h3 {
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
-  }
-
-  /* Padding */
-  .p {
-    padding: 0.5rem;
-  }
-  .p-1 {
-    padding: 1rem;
-  }
-  .p-2 {
-    padding: 2rem;
-  }
-  .p-3 {
-    padding: 3rem;
-  }
-  .py {
-    padding: 0.5rem 0;
-  }
-  .py-1 {
-    padding: 1rem 0;
-  }
-  .py-2 {
-    padding: 2rem 0;
-  }
-  .py-3 {
-    padding: 3rem 0;
-  }
-
-  /* Text Styles */
-  .x-large {
-    font-size: 3rem;
-  }
-
-  .large {
-    font-size: 2rem;
-  }
-
-  .lead {
-    font-size: 1rem;
   }
 
   /* Navbar */

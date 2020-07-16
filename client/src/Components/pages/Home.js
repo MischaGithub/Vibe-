@@ -23,6 +23,9 @@ const Home = ({ title, icon }) => {
       <div className="search-container">
         <SearchBar />
         <LocationBar />
+        <button className="btn dark">
+          <i className="fa fa-search" aria-hidden="true" />
+        </button>
       </div>
     </Fragment>
   );
