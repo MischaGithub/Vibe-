@@ -26,7 +26,7 @@ const About = ({ title, icon }) => {
         the marketing of their business but also grow a substantial business
         growth and a continous growing client base.
       </p>
-      <div className="grid-2">
+      <div className="grid-3">
         <img src={Barber} alt="avatar" />
         <img src={Burgers} alt="avatar" />
         <img src={HairSalon} alt="avatar" />
