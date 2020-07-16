@@ -57,6 +57,48 @@ h3 {
   text-align: center;
 }
 
+.about-container {
+  max-width: 800px;
+  margin: 5rem auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.about-container h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}
+
+/* Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+.grid-2-3 {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 2rem;
+}
+
 /* List */
 .list {
   margin: 0.5rem 0;
