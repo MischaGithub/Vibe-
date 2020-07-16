@@ -1,6 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, Fragment } from "react";
 import PropTypes from "prop-types";
 import AuthContext from "../../context/auth/authContext";
+import SearchBar from "../layout/SearchBar";
+import LocationBar from "../layout/LocationBar";
 
 const Home = ({ title, icon }) => {
   // AuthContext
@@ -11,11 +13,18 @@ const Home = ({ title, icon }) => {
     // eslint-disable-next-line
   }, []);
   return (
-    <div className="home-container">
-      <h1 className="bg-dark">
-        <i className={icon} /> {title}
-      </h1>
-    </div>
+    <Fragment>
+      <div className="home-container">
+        <h1 className="bg-dark">
+          <i className={icon} /> {title}
+        </h1>
+      </div>
+
+      <div className="search-container">
+        <SearchBar />
+        <LocationBar />
+      </div>
+    </Fragment>
   );
 };
 
