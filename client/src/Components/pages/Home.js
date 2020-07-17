@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import AuthContext from "../../context/auth/authContext";
 import SearchBar from "../layout/SearchBar";
 import LocationBar from "../layout/LocationBar";
+import BusinessItem from "../businesses/BusinessItem";
 
 const Home = ({ title, icon }) => {
   // AuthContext
@@ -23,10 +24,11 @@ const Home = ({ title, icon }) => {
       <div className="search-container">
         <SearchBar />
         <LocationBar />
-        <button className="btn dark">
+        <button className="search-btn">
           <i className="fa fa-search" aria-hidden="true" />
         </button>
       </div>
+      <BusinessItem />
     </Fragment>
   );
 };

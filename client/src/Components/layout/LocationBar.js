@@ -4,8 +4,13 @@ const SearchBar = () => {
   return (
     <form className="form">
       <div className="search-wrapper">
-        <button className="btn btn-dark">Location</button>
-        <input type="text" name="text" placeholder="Where..." />
+        <span className="search-span">Location</span>
+        <input
+          className="search-input"
+          type="text"
+          name="text"
+          placeholder="Where..."
+        />
       </div>
     </form>
   );

@@ -17,7 +17,7 @@ class BusinessItem extends Component {
   render() {
     return (
       <div className="container">
-        <div className="card text-center m">
+        <div className="card text-center ">
           <h3>{this.state.name}</h3>
           <p className="p-1">review: {this.state.review_count}</p>
           <p className="p-1">rating: {this.state.rating}</p>
