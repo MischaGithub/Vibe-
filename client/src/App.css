@@ -7,7 +7,7 @@
   --white-color: #ffffff;
   --danger-color: #f30707;
   --green-color: #008000;
-  --grey-color: #696969;
+  --grey-color: #d3d3d3;
 }
 
 * {
@@ -153,6 +153,10 @@ img {
 
 .text-center {
   text-align: center;
+}
+
+.text-left .left-header {
+  text-align: left;
 }
 
 /* Grid */
