@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import AuthContext from "../../context/auth/authContext";
 import SearchBar from "../layout/SearchBar";
 import LocationBar from "../layout/LocationBar";
-import BusinessItem from "../businesses/BusinessItem";
+import SearchSuggestion from "../layout/SearchSuggestion";
 
 const Home = ({ title, icon }) => {
   // AuthContext
@@ -15,12 +15,14 @@ const Home = ({ title, icon }) => {
   }, []);
   return (
     <Fragment>
+      {/* Website icon */}
       <div className="home-container">
         <h1 className="bg-dark">
           <i className={icon} /> {title}
         </h1>
       </div>
 
+      {/*The search and location bar */}
       <div className="search-container">
         <SearchBar />
         <LocationBar />
@@ -28,7 +30,11 @@ const Home = ({ title, icon }) => {
           <i className="fa fa-search" aria-hidden="true" />
         </button>
       </div>
-      <BusinessItem />
+
+      {/* This is the suggestion icons */}
+      <div className="suggestion-container">
+        <SearchSuggestion />
+      </div>
     </Fragment>
   );
 };

@@ -26,11 +26,11 @@ const TopNav = () => {
           </li>
         </ul>
         <ul>
-          <li>Hello {user && user.name}</li>
+          <li className="hide-sm">Hello {user && user.name}</li>
           <li>
             <a onClick={onLogout} href="/login">
-              <i className="fas fa-sign-out-alt"></i>{" "}
-              <span className="hide-sm">Logout</span>
+              <i className="fas fa-sign-out-alt" />
+              <span>Logout</span>
             </a>
           </li>
         </ul>

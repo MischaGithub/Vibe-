@@ -127,6 +127,25 @@ h3 {
   margin-right: 0.5rem;
 }
 
+.sugesstions {
+  display: flex;
+  justify-items: center;
+}
+
+.suggestions-span {
+  font-size: 0.95rem;
+  margin-right: 2.5rem;
+  justify-content: center;
+}
+
+.suggestion-container {
+  max-width: 1000px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 img {
   width: 100%;
   justify-content: left;
