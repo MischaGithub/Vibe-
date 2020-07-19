@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchBar = () => {
   return (
-    <form className="form">
+    <form>
       <div className="search-wrapper">
         <span className="search-span">Search</span>
         <input
@@ -11,6 +11,9 @@ const SearchBar = () => {
           name="text"
           placeholder="What are you looking for..."
         />
+        <button className="search-btn">
+          <i className="fa fa-search" aria-hidden="true" />
+        </button>
       </div>
     </form>
   );

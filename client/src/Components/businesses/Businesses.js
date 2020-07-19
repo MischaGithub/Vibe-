@@ -12,7 +12,7 @@ const Businesses = () => {
   return (
     <Fragment>
       {businesses.map((business) => (
-        <BusinessItem key={business.id} business={business} />
+        <BusinessItem key={business._id} business={business} />
       ))}
     </Fragment>
   );

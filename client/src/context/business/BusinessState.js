@@ -3,7 +3,7 @@ import React, { useReducer } from "react";
 import BusinessContext from "../business/businessContext";
 import businessReducer from "../business/businessReducer";
 import {
-  SET_CURRENT,
+  SET_CURRENT_BUSINESS,
   CLEAR_CURRENT,
   SEARCH_BUSINESS,
   CLEAR_SEARCH,
@@ -57,7 +57,7 @@ const BusinessState = (props) => {
 
   // Clear Search
 
-  // Set Current
+  // Set Current Business
 
   return (
     <BusinessContext.Provider

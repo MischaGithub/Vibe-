@@ -14,15 +14,25 @@ const BusinessItem = ({
 
         <div className=" text-left">
           <h3 className="left-header">{name}</h3>
-          <p className="my-1">Review count: {review_count}</p>
-          <p className="my-1">Phone: {phone}</p>
-          <p className="my-1">Rating: {rating}</p>
+          <ul className="List">
+            <li className="my-1">
+              Reviews:
+              {review_count}
+            </li>
+            <li className="my-1">
+              Rating
+              {rating}
+            </li>
+            <li className="my-1">Phone: {phone}</li>
+          </ul>
         </div>
 
         <div className="text-left">
           <h4 className="left-header">Physical Address</h4>
-          <p className="my-1">Address: {address}</p>
-          <p className="my-1">Location: {location}</p>
+          <ul className="List">
+            <li className="my-1">Address: {address}</li>
+            <li className="my-1">Location: {location}</li>
+          </ul>
         </div>
       </div>
     </div>

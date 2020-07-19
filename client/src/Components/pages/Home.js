@@ -28,10 +28,6 @@ const Home = ({ title, icon }) => {
         {/*The search and location bar */}
         <div className="search-container">
           <SearchBar />
-          <LocationBar />
-          <button className="search-btn">
-            <i className="fa fa-search" aria-hidden="true" />
-          </button>
         </div>
 
         {/* This is the suggestion icons */}
