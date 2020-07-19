@@ -4,7 +4,7 @@ import AuthContext from "../../context/auth/authContext";
 import SearchBar from "../layout/SearchBar";
 import LocationBar from "../layout/LocationBar";
 import SearchSuggestion from "../layout/SearchSuggestion";
-import BusinessItem from "../businesses/BusinessItem";
+import Businesses from "../businesses/Businesses";
 
 const Home = ({ title, icon }) => {
   // AuthContext
@@ -37,8 +37,8 @@ const Home = ({ title, icon }) => {
         <SearchSuggestion />
       </div>
 
-      <div>
-        <BusinessItem />
+      <div className="container">
+        <Businesses />
       </div>
     </Fragment>
   );
