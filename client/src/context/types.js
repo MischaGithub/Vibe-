@@ -10,3 +10,9 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
+
+// Business Types
+export const SET_CURRENT = "SET_CURRENT";
+export const CLEAR_CURRENT = "CLEAR_CUURENT";
+export const SEARCH_BUSINESS = "SEARCH_BUSINESS";
+export const CLEAR_SEARCH = "CLEAR_SEARCH";

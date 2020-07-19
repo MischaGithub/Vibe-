@@ -5,6 +5,7 @@ import SearchBar from "../layout/SearchBar";
 import LocationBar from "../layout/LocationBar";
 import SearchSuggestion from "../layout/SearchSuggestion";
 import Businesses from "../businesses/Businesses";
+import BusinessState from "../../context/business/BusinessState";
 
 const Home = ({ title, icon }) => {
   // AuthContext
@@ -15,32 +16,34 @@ const Home = ({ title, icon }) => {
     // eslint-disable-next-line
   }, []);
   return (
-    <Fragment>
-      {/* Website icon */}
-      <div className="home-container">
-        <h1 className="bg-dark">
-          <i className={icon} /> {title}
-        </h1>
-      </div>
+    <BusinessState>
+      <Fragment>
+        {/* Website icon */}
+        <div className="home-container">
+          <h1 className="bg-dark">
+            <i className={icon} /> {title}
+          </h1>
+        </div>
 
-      {/*The search and location bar */}
-      <div className="search-container">
-        <SearchBar />
-        <LocationBar />
-        <button className="search-btn">
-          <i className="fa fa-search" aria-hidden="true" />
-        </button>
-      </div>
+        {/*The search and location bar */}
+        <div className="search-container">
+          <SearchBar />
+          <LocationBar />
+          <button className="search-btn">
+            <i className="fa fa-search" aria-hidden="true" />
+          </button>
+        </div>
 
-      {/* This is the suggestion icons */}
-      <div className="suggestion-container">
-        <SearchSuggestion />
-      </div>
+        {/* This is the suggestion icons */}
+        <div className="suggestion-container">
+          <SearchSuggestion />
+        </div>
 
-      <div className="container">
-        <Businesses />
-      </div>
-    </Fragment>
+        <div className="container">
+          <Businesses />
+        </div>
+      </Fragment>
+    </BusinessState>
   );
 };
 
