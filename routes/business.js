@@ -12,9 +12,11 @@ const Business = require("../models/Business");
 // @access  Public
 router.get("/", async (req, res) => {
   try {
-    const businesses = await Business.find({ catergory: "" }).sort({
-      date: -1,
-    });
+    const businesses = await Business.collection("businesses")
+      .find({}, { projection: { catergory: "Burgers" } })
+      .sort({
+        date: -1,
+      });
     res.json(businesses);
   } catch (err) {
     console.error(err.message);

@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { uuid as v4 } from "uuid";
+
 import BusinessContext from "../business/businessContext";
 import businessReducer from "../business/businessReducer";
 import {
@@ -62,7 +62,7 @@ const BusinessState = (props) => {
   return (
     <BusinessContext.Provider
       value={{
-        business: state.business,
+        businesses: state.businesses,
       }}
     >
       {props.children}
