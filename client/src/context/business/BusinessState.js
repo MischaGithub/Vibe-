@@ -1,61 +1,51 @@
 import React, { useReducer } from "react";
+import axios from "axios";
 
 import BusinessContext from "../business/businessContext";
 import businessReducer from "../business/businessReducer";
 import {
-  SET_CURRENT_BUSINESS,
-  CLEAR_CURRENT,
   SEARCH_BUSINESS,
   CLEAR_SEARCH,
+  GET_BUSINESS,
+  CLEAR_BUSINESS,
+  BUSINESS_ERROR,
 } from "../types";
 
 const BusinessState = (props) => {
   const initialState = {
-    businesses: [
-      {
-        _id: "1",
-        image_url: "https://www.tashascafe.com/tashas.jpg",
-        name: "Tasha",
-        review_count: "1452",
-        phone: "021 421 4350",
-        rating: "4.3",
-        address:
-          "Shop 7117, Victoria & Alfred Waterfront, Victoria & Alfred Waterfront, Cape Town, 8001",
-        location: "Cape Town",
-      },
-      {
-        _id: "2",
-        image_url:
-          "https://famousbrands.co.za/wp-content/uploads/2017/02/steers_1.jpg",
-        name: "Steers",
-        review_count: "18",
-        phone: "079 125 7228",
-        rating: "2.8",
-        address:
-          "Shop 122 & 123, Kenilworth Centre, Doncaster Rd, Kenilworth, Cape Town, 7745",
-        location: "Cape Town",
-      },
-      {
-        _id: "3",
-        image_url:
-          "https://b.zmtcdn.com/data/pictures/2/6400312/17edc59b7ad624e8fd5c684a725845b3.jpg",
-        name: "Mac Donalds",
-        review_count: "1944",
-        phone: "021 761 2706",
-        rating: "3.7",
-        address: "Doncaster Rd, Kenilworth, Cape Town, 7708",
-        location: "Cape Town",
-      },
-    ],
+    businesses: [],
+    error: null,
+    search: null,
   };
 
   const [state, dispatch] = useReducer(businessReducer, initialState);
 
-  // Search Business
+  // Get Business
+  const getBusiness = async () => {
+    try {
+      const res = await axios.get("/api/businesses");
 
-  // Clear Current
+      dispatch({
+        type: GET_BUSINESS,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: BUSINESS_ERROR,
+        payload: err.response.msg,
+      });
+    }
+  };
+  // Search Business
+  // Find a business based on its catergory
+  const searchBusiness = (catergory) => {
+    dispatch({ type: SEARCH_BUSINESS, payload: catergory });
+  };
 
   // Clear Search
+  const clearSearch = () => {
+    dispatch({ type: CLEAR_SEARCH });
+  };
 
   // Set Current Business
 
@@ -63,6 +53,10 @@ const BusinessState = (props) => {
     <BusinessContext.Provider
       value={{
         businesses: state.businesses,
+        search: state.search,
+        searchBusiness,
+        clearSearch,
+        getBusiness,
       }}
     >
       {props.children}

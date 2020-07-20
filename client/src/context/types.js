@@ -12,7 +12,9 @@ export const LOGOUT = "LOGOUT";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 // Business Types
+export const GET_BUSINESS = "GET_BUSINESS";
+export const CLEAR_BUSINESS = "CLEAR_BUSINESS";
 export const SET_CURRENT_BUSINESS = "SET_CURRENT_BUSINESS";
-export const CLEAR_CURRENT = "CLEAR_CUURENT";
 export const SEARCH_BUSINESS = "SEARCH_BUSINESS";
 export const CLEAR_SEARCH = "CLEAR_SEARCH";
+export const BUSINESS_ERROR = "BUSINESS_ERROR";

@@ -2,7 +2,6 @@ import React, { useContext, useEffect, Fragment } from "react";
 import PropTypes from "prop-types";
 import AuthContext from "../../context/auth/authContext";
 import SearchBar from "../layout/SearchBar";
-import LocationBar from "../layout/LocationBar";
 import SearchSuggestion from "../layout/SearchSuggestion";
 import Businesses from "../businesses/Businesses";
 import BusinessState from "../../context/business/BusinessState";
@@ -15,6 +14,7 @@ const Home = ({ title, icon }) => {
     authContext.load_user();
     // eslint-disable-next-line
   }, []);
+
   return (
     <BusinessState>
       <Fragment>
