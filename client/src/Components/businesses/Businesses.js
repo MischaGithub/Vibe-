@@ -1,17 +1,26 @@
 import React, { Component, Fragment } from "react";
 import BusinessItem from "./BusinessItem";
+import Spinner from "../layout/Spinner";
+import PropTypes from "prop-types";
 
-class Businesses extends Component {
-  render() {
+const Businesses = ({ businesses, loading }) => {
+  if (loading) {
+    return <Spinner />;
+  } else {
     return (
       <div style={businessStyle}>
-        {this.props.businesses.map((business) => (
+        {businesses.map((business) => (
           <BusinessItem key={business._id} business={business} />
         ))}
       </div>
     );
   }
-}
+};
+
+Businesses.propTypes = {
+  businesses: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
 
 const businessStyle = {
   gridTemplateColumns: "repeat(3, 1fr)",
