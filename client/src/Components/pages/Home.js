@@ -1,6 +1,4 @@
-import React, { useContext, useEffect, Fragment, Component } from "react";
-import PropTypes from "prop-types";
-import AuthContext from "../../context/auth/authContext";
+import React, { Fragment, Component } from "react";
 import SearchBar from "../layout/SearchBar";
 import SearchSuggestion from "../layout/SearchSuggestion";
 import Businesses from "../businesses/Businesses";
@@ -18,13 +16,20 @@ class Home extends Component {
 
     this.setState({ businesses: res.data, loading: false });
   }
+
+  // searchCatergory of what the user inserts
+  searchCatergory = async (catergory) => {
+    const res = await axios.get(`/api/businesses/catergory?${catergory}`);
+
+    this.setState({ businesses: res.data.items, loading: false });
+  };
   render() {
     return (
       <BusinessState>
         <Fragment>
           {/*The search and location bar */}
           <div className="search-container">
-            <SearchBar />
+            <SearchBar searchCatergory={this.searchCatergory} />
           </div>
 
           {/* This is the suggestion icons */}

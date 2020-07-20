@@ -20,6 +20,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+//@route    GET api/business
+// @desc    Get all business
+// @access  Public
+router.get("/?search", async (req, res) => {
+  try {
+    const catergory = await Business.find({ $catergory: { $search: "" } });
+    res.json(catergory);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 //@route    POST api/business
 // @desc    Add a business
 // @access  Private
