@@ -1,9 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-const BusinessItem = ({
-  business: { name, image_url, review_count, rating, address, phone, location },
-}) => {
+const BusinessItem = (props) => {
+  const {
+    image_url,
+    name,
+    location,
+    rating,
+    review_count,
+    address,
+    phone,
+  } = props.business;
   return (
     // This is all the fields that will be displayed on the cards after search is done
     <div className="container">

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Components/layout/TopNav";
 import Alerts from "./Components/layout/Alerts";
@@ -17,27 +17,30 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-const App = () => {
-  return (
-    <AuthState>
-      <AlertState>
-        <Router>
-          <Fragment>
-            <Navbar />
-            <div className="container">
-              <Alerts />
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/register" component={Register} />
-              </Switch>
-            </div>
-          </Fragment>
-        </Router>
-      </AlertState>
-    </AuthState>
-  );
-};
+class App extends Component {
+  render() {
+    return (
+      <AuthState>
+        <AlertState>
+          <Router>
+            <Fragment>
+              <Navbar />
+
+              <div className="container">
+                <Alerts />
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/about" component={About} />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/register" component={Register} />
+                </Switch>
+              </div>
+            </Fragment>
+          </Router>
+        </AlertState>
+      </AuthState>
+    );
+  }
+}
 
 export default App;
