@@ -3,7 +3,6 @@ import SearchBar from "../layout/SearchBar";
 import SearchSuggestion from "../layout/SearchSuggestion";
 import Businesses from "../businesses/Businesses";
 import BusinessState from "../../context/business/BusinessState";
-import BusinessContext from "../../context/business/businessContext";
 import axios from "axios";
 
 class Home extends Component {

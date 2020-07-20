@@ -13,7 +13,7 @@ export default (state, action) => {
         loading: false,
         search: state.businesses.filter((business) => {
           const regex = new RegExp(`${action.payload}`, "gi");
-          return business.catergory.match(regex);
+          return business.category.match(regex);
         }),
       };
     case CLEAR_SEARCH:

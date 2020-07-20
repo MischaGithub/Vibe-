@@ -13,6 +13,7 @@ const BusinessItem = (props) => {
   } = props.business;
   return (
     // This is all the fields that will be displayed on the cards after search is done
+
     <div className="container">
       <div className="card grid-3">
         <div>
@@ -21,7 +22,7 @@ const BusinessItem = (props) => {
 
         <div className=" text-left">
           <h3 className="left-header">{name}</h3>
-          <ul className="List">
+          <ul className="list">
             <li className="my-1">
               Reviews:
               {review_count}

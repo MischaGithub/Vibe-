@@ -7,7 +7,6 @@ import {
   SEARCH_BUSINESS,
   CLEAR_SEARCH,
   GET_BUSINESS,
-  CLEAR_BUSINESS,
   BUSINESS_ERROR,
 } from "../types";
 
@@ -38,8 +37,8 @@ const BusinessState = (props) => {
   };
   // Search Business
   // Find a business based on its catergory
-  const searchBusiness = (catergory) => {
-    dispatch({ type: SEARCH_BUSINESS, payload: catergory });
+  const searchBusiness = (category) => {
+    dispatch({ type: SEARCH_BUSINESS, payload: category });
   };
 
   // Clear Search

@@ -8,10 +8,10 @@ const Businesses = ({ businesses, category, loading }) => {
     return <Spinner />;
   } else {
     return (
-      <div style={businessStyle}>
+      <div>
         {businesses
           .filter((business) =>
-            category ? business.catergory === category : business
+            category ? business.category === category : business
           )
           .map((filteredBusiness) => (
             <BusinessItem
@@ -28,11 +28,6 @@ Businesses.propTypes = {
   businesses: PropTypes.array.isRequired,
   category: PropTypes.string,
   loading: PropTypes.bool.isRequired,
-};
-
-const businessStyle = {
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gridGap: "1rem",
 };
 
 export default Businesses;

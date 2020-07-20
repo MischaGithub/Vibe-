@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
 // @access  Public
 router.get("/", async (req, res) => {
   try {
-    const catergory = await Business.filter({ $text: { $search: "" } });
+    const catergory = await Business.find({ $text: { $search: "" } });
     res.json(catergory);
   } catch (err) {
     console.error(err.message);
@@ -40,7 +40,7 @@ router.post(
   "/",
   [
     [
-      check("catergory", "Catergory is required").not().isEmpty(),
+      check("category", "Category is required").not().isEmpty(),
       check("location", "Location is required").not().isEmpty(),
     ],
   ],
@@ -61,7 +61,7 @@ router.post(
       rating,
       address,
       location,
-      catergory,
+      category,
     } = req.body;
 
     try {
@@ -73,7 +73,7 @@ router.post(
         rating,
         address,
         location,
-        catergory,
+        category,
       });
 
       const business = await newBusiness.save();
