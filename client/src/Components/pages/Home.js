@@ -3,12 +3,14 @@ import SearchBar from "../layout/SearchBar";
 import SearchSuggestion from "../layout/SearchSuggestion";
 import Businesses from "../businesses/Businesses";
 import BusinessState from "../../context/business/BusinessState";
+import BusinessContext from "../../context/business/businessContext";
 import axios from "axios";
 
 class Home extends Component {
   state = {
     businesses: [],
     loading: false,
+    category: "",
   };
   async componentDidMount() {
     this.setState({ loading: true });
@@ -19,9 +21,9 @@ class Home extends Component {
 
   // searchCatergory of what the user inserts
   searchCatergory = async (catergory) => {
-    const res = await axios.get(`/api/businesses/catergory?${catergory}`);
-
-    this.setState({ businesses: res.data.items, loading: false });
+    this.setState({
+      category: catergory.charAt(0).toUpperCase() + catergory.substring(1),
+    });
   };
   render() {
     return (
@@ -39,6 +41,7 @@ class Home extends Component {
 
           <div className="container">
             <Businesses
+              category={this.state.category}
               loading={this.state.loading}
               businesses={this.state.businesses}
             />

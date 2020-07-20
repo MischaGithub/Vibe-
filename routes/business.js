@@ -23,9 +23,9 @@ router.get("/", async (req, res) => {
 //@route    GET api/business
 // @desc    Get all business
 // @access  Public
-router.get("/?search", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const catergory = await Business.find({ $catergory: { $search: "" } });
+    const catergory = await Business.filter({ $text: { $search: "" } });
     res.json(catergory);
   } catch (err) {
     console.error(err.message);
