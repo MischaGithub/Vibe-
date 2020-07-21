@@ -11,15 +11,14 @@ class Home extends Component {
     loading: false,
     category: "",
   };
-  async componentDidMount() {
+
+  // searchCatergory of what the user inserts
+  searchCategory = async (catergory) => {
     this.setState({ loading: true });
     const res = await axios.get("/api/businesses");
 
     this.setState({ businesses: res.data, loading: false });
-  }
 
-  // searchCatergory of what the user inserts
-  searchCatergory = async (catergory) => {
     this.setState({
       category: catergory.charAt(0).toUpperCase() + catergory.substring(1),
     });
@@ -30,7 +29,7 @@ class Home extends Component {
         <Fragment>
           {/*The search and location bar */}
           <div className="search-container">
-            <SearchBar searchCatergory={this.searchCatergory} />
+            <SearchBar searchCategory={this.searchCategory} />
           </div>
 
           {/* This is the suggestion icons */}

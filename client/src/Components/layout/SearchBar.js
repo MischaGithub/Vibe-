@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class SearchBar extends Component {
   state = {
     catergory: "",
+  };
+
+  // Proptypes
+  static propTypes = {
+    searchCategory: PropTypes.func.isRequired,
   };
 
   //  onChange
@@ -13,7 +19,7 @@ class SearchBar extends Component {
   // onSubmit
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.searchCatergory(this.state.catergory);
+    this.props.searchCategory(this.state.catergory);
     this.setState({ catergory: "" });
   };
   render() {
