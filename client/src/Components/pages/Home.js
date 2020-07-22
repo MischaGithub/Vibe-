@@ -11,17 +11,17 @@ class Home extends Component {
   state = {
     businesses: [],
     loading: false,
-    category: "",
+    filterText: "",
     alert: null,
   };
 
   // searchCatergory of what the user inserts
-  searchCategory = async (catergory) => {
+  searchCategory = async (filterText) => {
     this.setState({ loading: true });
     const res = await axios.get("/api/businesses");
     this.setState({ businesses: res.data, loading: false });
     this.setState({
-      category: catergory.charAt(0).toUpperCase() + catergory.substring(1),
+      filterText: filterText.charAt(0).toUpperCase() + filterText.substring(1),
     });
   };
 
@@ -55,7 +55,7 @@ class Home extends Component {
 
           <div className="container">
             <Businesses
-              category={this.state.category}
+              filterText={this.state.filterText}
               loading={this.state.loading}
               businesses={this.state.businesses}
             />

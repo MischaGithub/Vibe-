@@ -8,21 +8,21 @@ const SearchBar = ({
   setAlert,
 }) => {
   // State
-  const [catergory, setCatergory] = useState("");
+  const [filterText, setFilterText] = useState("");
 
   //  onChange
   const onChange = (e) => {
-    setCatergory(e.target.value);
+    setFilterText(e.target.value);
   };
 
   // onSubmit
   const onSubmit = (e) => {
     e.preventDefault();
-    if (catergory === "") {
+    if (filterText === "") {
       setAlert("Please enter a category", "dark");
     } else {
-      searchCategory(catergory);
-      setCatergory("");
+      searchCategory(filterText);
+      setFilterText("");
     }
   };
 
@@ -35,7 +35,7 @@ const SearchBar = ({
             type="text"
             name="catergory"
             placeholder="What are you looking for..."
-            value={catergory}
+            value={filterText}
             onChange={onChange}
           />
           <button type="submit" className="search-btn">

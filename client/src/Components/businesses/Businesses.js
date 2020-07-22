@@ -3,7 +3,7 @@ import BusinessItem from "./BusinessItem";
 import Spinner from "../layout/Spinner";
 import PropTypes from "prop-types";
 
-const Businesses = ({ businesses, category, loading }) => {
+const Businesses = ({ businesses, filterText, loading }) => {
   if (loading) {
     return <Spinner />;
   } else {
@@ -11,7 +11,7 @@ const Businesses = ({ businesses, category, loading }) => {
       <div>
         {businesses
           .filter((business) =>
-            category ? business.category === category : business
+            filterText ? business.category === filterText : business
           )
           .map((filteredBusiness) => (
             <BusinessItem
@@ -26,7 +26,7 @@ const Businesses = ({ businesses, category, loading }) => {
 
 Businesses.propTypes = {
   businesses: PropTypes.array.isRequired,
-  category: PropTypes.string,
+  filterText: PropTypes.string,
   loading: PropTypes.bool.isRequired,
 };
 

@@ -28,7 +28,7 @@ const BusinessItem = (props) => {
               {review_count}
             </li>
             <li className="my-1">
-              Rating
+              Rating:
               {rating}
             </li>
             <li className="my-1">Phone: {phone}</li>
