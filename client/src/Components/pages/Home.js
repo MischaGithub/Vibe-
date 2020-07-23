@@ -26,7 +26,8 @@ class Home extends Component {
   };
 
   // Clear search from state
-  clearBusinesses = () => this.setState({ businesses: [], loading: false });
+  clearBusinesses = () =>
+    this.setState({ businesses: [], loading: false, filterText: "" });
   // Set Alert
   setAlert = (msg, type) => {
     this.setState({ alert: { msg, type } });
