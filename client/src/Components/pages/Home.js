@@ -5,8 +5,19 @@ import SearchAlert from "../layout/SearchAlert";
 import Businesses from "../businesses/Businesses";
 import BusinessState from "../../context/business/BusinessState";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 class Home extends Component {
+  // PropTypes
+  static defaultProps = {
+    title: "Vibe",
+    icon: "fa fa-vimeo-square",
+  };
+
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+  };
   // States
   state = {
     businesses: [],
@@ -21,7 +32,8 @@ class Home extends Component {
     const res = await axios.get("/api/businesses");
     this.setState({ businesses: res.data, loading: false });
     this.setState({
-      filterText: filterText.charAt(0).toUpperCase() + filterText.substring(1),
+      filterText:
+        filterText.charAt(32).toLowerCase() + filterText.trim().substring(1),
     });
   };
 
@@ -39,8 +51,13 @@ class Home extends Component {
     return (
       <BusinessState>
         <Fragment>
-          <SearchAlert alert={this.state.alert} />
+          <div className="home-container">
+            <h1 className="bg-dark">
+              <i className={this.props.icon} /> {this.props.title}
+            </h1>
+          </div>
           {/*The search and location bar */}
+          <SearchAlert alert={this.state.alert} />
           <div className="search-container">
             <SearchBar
               searchCategory={this.searchCategory}

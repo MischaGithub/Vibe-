@@ -12,14 +12,6 @@ const SearchSuggestion = () => {
         NightLife
         <i className="fa fa-glass" aria-hidden="true" />
       </span>
-      <span className="suggestions-span hide-sm">
-        Services
-        <i className="fa fa-building" aria-hidden="true" />
-      </span>
-      <span className="suggestions-span hide-sm">
-        Delivery Services
-        <i className="fa fa-truck" aria-hidden="true" />
-      </span>
     </div>
   );
 };

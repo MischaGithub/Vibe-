@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 import Barber from "../../assets/about_img.jpg";
 import Burgers from "../../assets/about_img2.jpg";
-import HairSalon from "../../assets/about_img3.jpg";
+import Burger_Joints from "../../assets/burger_joints.jpg";
 import Bars from "../../assets/about_img4.jpg";
-import Dentist from "../../assets/about_img5.jpg";
-import Mechanics from "../../assets/about_img6.jpg";
+import Fine_Dining from "../../assets/fine_dining.jpg";
+import Clubs from "../../assets/clubs.jpg";
 
 const About = ({ title, icon }) => {
   return (
@@ -18,21 +18,21 @@ const About = ({ title, icon }) => {
       <h1>About this website</h1>
       <p className="my-1">
         Vibe was founded to help people find great local businesses like
-        dentists, hair stylists and mechanics.With unmatched local business
-        information, photos and review content, Vibe provides a one-stop local
-        platform for consumers to discover, connect and transact with local
-        businesses of all sizes. As so many local businesses goes unrecognized
-        Vibe's mission is to make all businesses known which will help them with
-        the marketing of their business but also grow a substantial business
-        growth and a continous growing client base.
+        restaurants, burger joints, fine dining, clubs and bars.With unmatched
+        local business information, photos and review content, Vibe provides a
+        one-stop local platform for consumers to discover, connect and transact
+        with local businesses of all sizes. As so many local businesses goes
+        unrecognized Vibe's mission is to make all businesses known which will
+        help them with the marketing of their business but also grow a
+        substantial business growth and a continous growing client base.
       </p>
       <div className="grid-3">
         <img src={Barber} alt="avatar" />
         <img src={Burgers} alt="avatar" />
-        <img src={HairSalon} alt="avatar" />
+        <img src={Fine_Dining} alt="avatar" />
+        <img src={Burger_Joints} alt="avatar" />
         <img src={Bars} alt="avatar" />
-        <img src={Dentist} alt="avatar" />
-        <img src={Mechanics} alt="avatar" />
+        <img src={Clubs} alt="avatar" />
       </div>
     </div>
   );

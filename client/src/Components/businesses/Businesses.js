@@ -32,9 +32,6 @@ const Businesses = ({ businesses, filterText, loading }) => {
               />
               No Match
             </h1>
-            <p className=" text-center bg-dark">
-              Oops! Check spelling and avoid spaces the category you looking for
-            </p>
           </div>
         )}
       </div>
