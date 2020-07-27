@@ -4,9 +4,11 @@ import Spinner from "../layout/Spinner";
 import PropTypes from "prop-types";
 
 const Businesses = ({ businesses, filterText, loading }) => {
-  const filteredBusinesses = businesses.filter((business) =>
-    filterText ? business.category.includes(filterText) : business
-  );
+  const filteredBusinesses = businesses.filter((business) => {
+    return filterText
+      ? business.category.toLowerCase().includes(filterText)
+      : business;
+  });
 
   const displayNoResults = filteredBusinesses.length !== 0 || !filterText;
   if (loading) {

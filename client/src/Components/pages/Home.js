@@ -30,11 +30,15 @@ class Home extends Component {
   searchCategory = async (filterText) => {
     this.setState({ loading: true });
     const res = await axios.get("/api/businesses");
-    this.setState({ businesses: res.data, loading: false });
     this.setState({
-      filterText:
-        filterText.charAt(32).toLowerCase() + filterText.trim().substring(1),
+      businesses: res.data,
+      loading: false,
+      filterText: filterText.toLowerCase().trim(),
     });
+    // this.setState({
+    //   filterText: filterText.toLowerCase().trim(),
+    //   // filterText.charAt(32).toLowerCase() + filterText.trim().substring(1),
+    // });
   };
 
   // Clear search from state

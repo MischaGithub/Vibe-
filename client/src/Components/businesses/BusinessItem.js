@@ -23,21 +23,15 @@ const BusinessItem = (props) => {
         <div className=" text-left">
           <h3 className="left-header">{name}</h3>
           <ul className="list">
-            <li className="my-1">
-              Reviews:
-              {review_count}
-            </li>
-            <li className="my-1">
-              Rating:
-              {rating}
-            </li>
+            <li className="my-1">Review: {review_count} </li>
+            <li className="my-1">Rating: {rating} </li>
             <li className="my-1">Phone: {phone}</li>
           </ul>
         </div>
 
         <div className="text-left">
           <h4 className="left-header">Physical Address</h4>
-          <ul className="List">
+          <ul className="list">
             <li className="my-1">Address: {address}</li>
             <li className="my-1">Location: {location}</li>
           </ul>
