@@ -26,6 +26,8 @@ const About = ({ title, icon }) => {
         help them with the marketing of their business but also grow a
         substantial business growth and a continous growing client base.
       </p>
+
+      {/* Images on the about page */}
       <div className="grid-3">
         <img src={Barber} alt="avatar" />
         <img src={Burgers} alt="avatar" />
@@ -38,6 +40,7 @@ const About = ({ title, icon }) => {
   );
 };
 
+// About PropTypes
 About.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.string,

@@ -4,18 +4,22 @@ import Spinner from "../layout/Spinner";
 import PropTypes from "prop-types";
 
 const Businesses = ({ businesses, filterText, loading }) => {
+  // filteredBusinesses
   const filteredBusinesses = businesses.filter((business) => {
     return filterText
       ? business.category.toLowerCase().includes(filterText)
       : business;
   });
 
+  // displayNoResults
   const displayNoResults = filteredBusinesses.length !== 0 || !filterText;
+
   if (loading) {
     return <Spinner />;
   } else {
     return (
       <div>
+        {/* Mapping through the business and showing results of filteredBusinesses */}
         {filteredBusinesses.map((filteredBusiness) => (
           <BusinessItem
             key={filteredBusiness._id}
@@ -23,6 +27,7 @@ const Businesses = ({ businesses, filterText, loading }) => {
           />
         ))}
         {/* So here if the business category does not match anything in the db then so a h1 with No Match */}
+
         {displayNoResults ? (
           businesses.category
         ) : (
