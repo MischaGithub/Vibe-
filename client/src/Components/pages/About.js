@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Barber from "../../assets/about_img.jpg";
+import Dining from "../../assets/fine_dining_2.jpg";
 import Burgers from "../../assets/about_img2.jpg";
 import Burger_Joints from "../../assets/burger_joints.jpg";
 import Bars from "../../assets/about_img4.jpg";
@@ -29,7 +29,7 @@ const About = ({ title, icon }) => {
 
       {/* Images on the about page */}
       <div className="grid-3">
-        <img src={Barber} alt="avatar" />
+        <img src={Dining} alt="avatar" />
         <img src={Burgers} alt="avatar" />
         <img src={Fine_Dining} alt="avatar" />
         <img src={Burger_Joints} alt="avatar" />

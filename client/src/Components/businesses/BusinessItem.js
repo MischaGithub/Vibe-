@@ -17,57 +17,46 @@ const BusinessItem = (props) => {
 
     <div className="container">
       <div className="card grid-3">
+        {/** Business Image */}
         <div>
           <img src={image_url} alt="" />
         </div>
 
+        {/* Business Info Reviews, Rating and Phone Number */}
         <div className=" text-left">
           <h3 className="left-header">{name}</h3>
           <ul className="list">
             <li className="my-1">
-              <i
-                class="fa fa-pencil-square"
-                aria-hidden="true"
-                style={{ paddingRight: "5px" }}
-              />
-              {review_count}
+              <i class="fa fa-pencil-square" aria-hidden="true" />
+              {review_count} Reviews
             </li>
             <li className="my-1">
-              <Rating
-                emptySymbol="fa fa-star-o fa-1x"
-                fullSymbol="fa fa-star fa-1x"
-                fractions={2}
-                initialRating={rating}
-              />
+              <i>
+                <Rating
+                  emptySymbol="fa fa-star-o fa-1x"
+                  fullSymbol="fa fa-star fa-1x"
+                  fractions={2}
+                  initialRating={rating}
+                />
+              </i>
             </li>
             <li className="my-1">
-              <i
-                class="fa fa-phone-square"
-                aria-hidden="true"
-                style={{ paddingRight: "5px" }}
-              />
+              <i class="fa fa-phone-square" aria-hidden="true" />
               {phone}
             </li>
           </ul>
         </div>
 
+        {/* Physical Address Section */}
         <div className="text-left">
           <h4 className="left-header">Physical Address</h4>
           <ul className="list">
             <li className="my-1">
-              <i
-                class="fa fa-map-marker"
-                aria-hidden="true"
-                style={{ paddingRight: "5px" }}
-              />
+              <i class="fa fa-map-marker" aria-hidden="true" />
               {address}
             </li>
             <li className="my-1">
-              <i
-                class="fa fa-location-arrow"
-                aria-hidden="true"
-                style={{ paddingRight: "5px" }}
-              />
+              <i class="fa fa-location-arrow" aria-hidden="true" />
               {location}
             </li>
           </ul>

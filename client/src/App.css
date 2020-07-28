@@ -167,9 +167,6 @@ img {
   margin: 0.7rem 0;
 }
 
-.rating {
-  width: 2rem;
-}
 /* Grid */
 .grid-2 {
   display: grid;
@@ -210,6 +207,11 @@ img {
 
 .list li {
   padding-bottom: 0.3rem;
+}
+
+.list li i {
+  padding-right: 5px;
+  color: var(--dark-color);
 }
 
 .my-1 {
