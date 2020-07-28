@@ -37,6 +37,7 @@ const BusinessItem = (props) => {
                   fullSymbol="fa fa-star fa-1x"
                   fractions={2}
                   initialRating={rating}
+                  readonly
                 />
               </i>
             </li>
