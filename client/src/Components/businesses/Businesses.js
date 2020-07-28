@@ -14,11 +14,27 @@ const Businesses = ({ businesses, filterText, loading }) => {
   // displayNoResults
   const displayNoResults = filteredBusinesses.length !== 0 || !filterText;
 
+  const searchResults = filteredBusinesses > 0;
+
   if (loading) {
     return <Spinner />;
   } else {
     return (
       <div>
+        {searchResults ? (
+          businesses.category
+        ) : (
+          <div>
+            <h1 className="text-center bg-dark">
+              <i
+                class="fa fa-list-alt"
+                aria-hidden="true"
+                style={{ marginRight: "0.5rem" }}
+              />
+              Search Results
+            </h1>
+          </div>
+        )}
         {/* Mapping through the business and showing results of filteredBusinesses */}
         {filteredBusinesses.map((filteredBusiness) => (
           <BusinessItem
@@ -26,6 +42,7 @@ const Businesses = ({ businesses, filterText, loading }) => {
             business={filteredBusiness}
           />
         ))}
+
         {/* So here if the business category does not match anything in the db then so a h1 with No Match */}
 
         {displayNoResults ? (
