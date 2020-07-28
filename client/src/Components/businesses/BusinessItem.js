@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Rating from "react-rating";
 
 const BusinessItem = (props) => {
   const {
@@ -23,17 +24,52 @@ const BusinessItem = (props) => {
         <div className=" text-left">
           <h3 className="left-header">{name}</h3>
           <ul className="list">
-            <li className="my-1">Review: {review_count} </li>
-            <li className="my-1">Rating: {rating} </li>
-            <li className="my-1">Phone: {phone}</li>
+            <li className="my-1">
+              <i
+                class="fa fa-pencil-square"
+                aria-hidden="true"
+                style={{ paddingRight: "5px" }}
+              />
+              {review_count}
+            </li>
+            <li className="my-1">
+              <Rating
+                emptySymbol="fa fa-star-o fa-1x"
+                fullSymbol="fa fa-star fa-1x"
+                fractions={2}
+                initialRating={rating}
+              />
+            </li>
+            <li className="my-1">
+              <i
+                class="fa fa-phone-square"
+                aria-hidden="true"
+                style={{ paddingRight: "5px" }}
+              />
+              {phone}
+            </li>
           </ul>
         </div>
 
         <div className="text-left">
           <h4 className="left-header">Physical Address</h4>
           <ul className="list">
-            <li className="my-1">Address: {address}</li>
-            <li className="my-1">Location: {location}</li>
+            <li className="my-1">
+              <i
+                class="fa fa-map-marker"
+                aria-hidden="true"
+                style={{ paddingRight: "5px" }}
+              />
+              {address}
+            </li>
+            <li className="my-1">
+              <i
+                class="fa fa-location-arrow"
+                aria-hidden="true"
+                style={{ paddingRight: "5px" }}
+              />
+              {location}
+            </li>
           </ul>
         </div>
       </div>
