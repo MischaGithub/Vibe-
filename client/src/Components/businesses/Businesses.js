@@ -14,11 +14,27 @@ const Businesses = ({ businesses, filterText, loading }) => {
   // displayNoResults
   const displayNoResults = filteredBusinesses.length !== 0 || !filterText;
 
+  const searchResults = filteredBusinesses.length > 0;
+
   if (loading) {
     return <Spinner />;
   } else {
     return (
       <div>
+        {searchResults ? (
+          <div>
+            <h2 className="text-center bg-dark">
+              <i
+                className="fa fa-list-alt"
+                aria-hidden="true"
+                style={{ marginRight: "0.5rem" }}
+              />
+              Search Results
+            </h2>
+          </div>
+        ) : (
+          businesses.category
+        )}
         {/* Mapping through the business and showing results of filteredBusinesses */}
         {filteredBusinesses.map((filteredBusiness) => (
           <BusinessItem

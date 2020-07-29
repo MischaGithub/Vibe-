@@ -60,6 +60,7 @@ class Home extends Component {
               <i className={this.props.icon} /> {this.props.title}
             </h1>
           </div>
+
           {/*The search and location bar */}
           <SearchAlert alert={this.state.alert} />
           <div className="search-container">
