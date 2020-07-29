@@ -76,6 +76,7 @@ class Home extends Component {
             <SearchSuggestion />
           </div>
 
+          {/* Business container */}
           <div className="container">
             <Businesses
               filterText={this.state.filterText}

@@ -34,7 +34,7 @@ const SearchBar = ({
           <input
             type="text"
             name="catergory"
-            placeholder="What are you looking for..."
+            placeholder="Burgers, Sushi, Bar, Clubs..."
             value={filterText}
             onChange={onChange}
           />
