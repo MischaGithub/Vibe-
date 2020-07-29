@@ -27,7 +27,7 @@ const BusinessItem = (props) => {
           <h3 className="left-header">{name}</h3>
           <ul className="list">
             <li className="my-1">
-              <i class="fa fa-pencil-square" aria-hidden="true" />
+              <i className="fa fa-pencil-square" aria-hidden="true" />
               {review_count} Reviews
             </li>
             <li className="my-1">
@@ -42,22 +42,22 @@ const BusinessItem = (props) => {
               </i>
             </li>
             <li className="my-1">
-              <i class="fa fa-phone-square" aria-hidden="true" />
+              <i className="fa fa-phone-square" aria-hidden="true" />
               {phone}
             </li>
           </ul>
         </div>
 
         {/* Physical Address Section */}
-        <div className="text-left">
+        <div className="text-left hide-sm">
           <h4 className="left-header">Physical Address</h4>
           <ul className="list">
             <li className="my-1">
-              <i class="fa fa-map-marker" aria-hidden="true" />
+              <i className="fa fa-map-marker" aria-hidden="true" />
               {address}
             </li>
             <li className="my-1">
-              <i class="fa fa-location-arrow" aria-hidden="true" />
+              <i className="fa fa-location-arrow" aria-hidden="true" />
               {location}
             </li>
           </ul>
