@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://mish1234:mish1234@vibe.h1wqc.mongodb.net/vibe?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
+}

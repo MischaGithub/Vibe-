@@ -1,6 +1,8 @@
 // Server
 const express = require("express");
 const connectDB = require("./config/db");
+// Path
+const path = require("path");
 
 const app = express();
 
@@ -10,15 +12,21 @@ connectDB();
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-// Routes
-app.get("/", (req, res) =>
-  res.json({ msg: "Welcome to Vibe a review site..." })
-);
-
 // Defining routes
 app.use("/api/users", require("./routes/users"));
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/businesses", require("./routes/business"));
+
+// Serve static assest in production
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("client/build"));
+
+  // App get
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+  );
+}
 
 // Port
 const PORT = process.env.PORT || 5000;
