@@ -77,13 +77,12 @@ class Home extends Component {
           </div>
 
           {/* Business container */}
-          <div className="container">
-            <Businesses
-              filterText={this.state.filterText}
-              loading={this.state.loading}
-              businesses={this.state.businesses}
-            />
-          </div>
+
+          <Businesses
+            filterText={this.state.filterText}
+            loading={this.state.loading}
+            businesses={this.state.businesses}
+          />
         </Fragment>
       </BusinessState>
     );

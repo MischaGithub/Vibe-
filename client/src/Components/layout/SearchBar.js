@@ -27,7 +27,7 @@ const SearchBar = ({
   };
 
   return (
-    <div className="conatiner">
+    <div className="container">
       <form onSubmit={onSubmit}>
         <div className="search-wrapper">
           <span className="search-span">Search</span>
