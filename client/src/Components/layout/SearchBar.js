@@ -27,14 +27,14 @@ const SearchBar = ({
   };
 
   return (
-    <div className="container">
+    <div className="searchbar-container">
       <form onSubmit={onSubmit}>
         <div className="search-wrapper">
           <span className="search-span">Search</span>
           <input
             type="text"
             name="catergory"
-            placeholder="Burgers, Sushi, Bar, Clubs..."
+            placeholder="Burgers, Sushi, Bar, Beer, Clubs..."
             value={filterText}
             onChange={onChange}
           />
